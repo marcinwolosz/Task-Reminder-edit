@@ -36,8 +36,8 @@
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop" />
-        <activity android:name=".activity.add" />
-        <activity android:name=".activity.show"></activity>
+        <activity android:name=".activity.AddActivity" />
+        <activity android:name=".activity.ShowActivity"></activity>
     </application>
 
 </manifest>

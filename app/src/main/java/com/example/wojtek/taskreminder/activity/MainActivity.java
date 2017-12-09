@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, add.class);
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
                 startActivity(intent);
 
             }
@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, show.class);
+                Intent intent = new Intent(MainActivity.this, ShowActivity.class);
                 startActivity(intent);
 
             }

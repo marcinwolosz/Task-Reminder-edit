@@ -20,7 +20,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 
 
-public class add extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
+public class AddActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
 
 
 

@@ -13,7 +13,7 @@ import com.example.wojtek.taskreminder.helper.SessionManager;
 
 import java.util.HashMap;
 
-public class show extends Activity {
+public class ShowActivity extends Activity {
 
     private TextView txtName;
     private TextView txtEmail;
@@ -76,7 +76,7 @@ public class show extends Activity {
         db.deleteUsers();
 
         // Launching the login activity
-        Intent intent = new Intent(show.this, LoginActivity.class);
+        Intent intent = new Intent(ShowActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
     }
