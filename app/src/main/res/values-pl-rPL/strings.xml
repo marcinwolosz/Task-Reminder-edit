@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Logowanie i rejestracja-->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Haslo</string>
+    <string name="hint_name">Imie i nazwisko</string>
+    <string name="btn_login">LOGOWANIE</string>
+    <string name="btn_register">REJESTRACJA</string>
+    <string name="btn_link_to_register">Nie masz konta? Zarejestruj sie.</string>
+    <string name="btn_link_to_login">Masz już konto! Zaloguj się.</string>
+    <string name="welcome">Witamy</string>
+    <string name="btn_logout">WYLOGUJ</string>
+    <string name="name">Imie i nazwisko</string>
+    <string name="toast_register_enter_details">Podaj swoje dane!</string>
+    <string name="toast_register_succesfull">Użytkownik pomyślnie zalogowany. Możesz sie zalogować!</string>
+    <string name="registering">Rejestracja ...</string>
+    <string name="logging">Logowanie ...</string>
+    <string name="toast_logging_bad_creditionals">Podaj wszystkie dane</string>
+
+
+</resources>
