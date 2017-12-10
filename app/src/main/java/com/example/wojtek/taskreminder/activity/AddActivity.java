@@ -3,9 +3,14 @@ package com.example.wojtek.taskreminder.activity;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +25,8 @@ import com.example.wojtek.taskreminder.R;
 import java.text.DateFormat;
 import java.util.Calendar;
 
+import static com.example.wojtek.taskreminder.activity.NetworkStateChangeReceiver.IS_NETWORK_AVAILABLE;
+
 
 public class AddActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
 
@@ -29,6 +36,18 @@ public class AddActivity extends AppCompatActivity implements TimePickerDialog.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
+
+
+        IntentFilter intentFilter = new IntentFilter(NetworkStateChangeReceiver.NETWORK_AVAILABLE_ACTION);
+        LocalBroadcastManager.getInstance(this).registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                boolean isNetworkAvailable = intent.getBooleanExtra(IS_NETWORK_AVAILABLE, false);
+                String networkStatus = isNetworkAvailable ? "connected" : "disconnected";
+
+                Snackbar.make(findViewById(R.id.activity_add), "Network Status: " + networkStatus, Snackbar.LENGTH_LONG).show();
+            }
+        }, intentFilter);
 
         Button time = (Button) findViewById(R.id.btntime);
         Button date = (Button) findViewById(R.id.btndate);
