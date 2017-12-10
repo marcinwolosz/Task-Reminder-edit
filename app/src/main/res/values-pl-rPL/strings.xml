@@ -17,6 +17,9 @@
     <string name="logging">Logowanie ...</string>
     <string name="toast_logging_bad_creditionals">Podaj wszystkie dane</string>
     <string name="info">Tutaj dodasz nowe zadanie!</string>
+    <string name="connectionstatus">"Status połączenia: "</string>
+    <string name="connected">"Połączony"</string>
+    <string name="disconnected">"Rozłączony "</string>
 
 
 

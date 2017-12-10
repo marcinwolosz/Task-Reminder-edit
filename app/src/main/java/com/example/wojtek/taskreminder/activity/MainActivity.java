@@ -42,9 +42,9 @@ public class MainActivity extends Activity {
             @Override
             public void onReceive(Context context, Intent intent) {
                 boolean isNetworkAvailable = intent.getBooleanExtra(IS_NETWORK_AVAILABLE, false);
-                String networkStatus = isNetworkAvailable ? "connected" : "disconnected";
+                String networkStatus = isNetworkAvailable ? getString(R.string.connected) : getString(R.string.disconnected);
 
-                Snackbar.make(findViewById(R.id.activity_main), "Network Status: " + networkStatus, Snackbar.LENGTH_LONG).show();
+                Snackbar.make(findViewById(R.id.activity_main), getString(R.string.connectionstatus) + networkStatus, Snackbar.LENGTH_LONG).show();
             }
         }, intentFilter);
 

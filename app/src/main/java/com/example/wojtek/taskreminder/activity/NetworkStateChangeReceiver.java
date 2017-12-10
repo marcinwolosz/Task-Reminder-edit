@@ -14,7 +14,7 @@ import android.util.Log;
 import static android.content.Context.CONNECTIVITY_SERVICE;
 
 public class NetworkStateChangeReceiver extends BroadcastReceiver {
-    public static final String NETWORK_AVAILABLE_ACTION = "com.ajit.singh.NetworkAvailable";
+    public static final String NETWORK_AVAILABLE_ACTION = "NetworkAvailable";
     public static final String IS_NETWORK_AVAILABLE = "isNetworkAvailable";
 
     @Override
