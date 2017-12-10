@@ -16,6 +16,20 @@
     <string name="registering">Rejestracja ...</string>
     <string name="logging">Logowanie ...</string>
     <string name="toast_logging_bad_creditionals">Podaj wszystkie dane</string>
+    <string name="info">Tutaj dodasz nowe zadanie!</string>
+
+
+
+    <!-- Dodawanie i wyswietlanie-->
+    <string name="btn_add">Dodaj zadanie</string>
+    <string name="btn_show">Pokaż moje zadania</string>
+    <string name="task_name">Tytuł zadania</string>
+    <string name="select_date">Wybierz date</string>
+    <string name="select_time">wybierz godzine</string>
+    <string name="date">date</string>
+    <string name="time">time</string>
+    <string name="add_task">Dodaj zadanie</string>
+
 
 
 </resources>
