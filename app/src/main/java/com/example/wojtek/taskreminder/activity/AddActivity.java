@@ -3,6 +3,7 @@ package com.example.wojtek.taskreminder.activity;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,7 @@ public class AddActivity extends AppCompatActivity implements TimePickerDialog.O
 
         Button time = (Button) findViewById(R.id.btntime);
         Button date = (Button) findViewById(R.id.btndate);
+        Button addTask = (Button) findViewById(R.id.btnAddTask);
 
         date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,15 @@ public class AddActivity extends AppCompatActivity implements TimePickerDialog.O
                 timepicker.show(getSupportFragmentManager(),"time picker");
 
 
+
+            }
+        });
+        addTask.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddActivity.this, MainActivity.class);
+                startActivity(intent);
 
             }
         });

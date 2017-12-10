@@ -26,8 +26,8 @@
     <string name="task_name">Tytuł zadania</string>
     <string name="select_date">Wybierz date</string>
     <string name="select_time">wybierz godzine</string>
-    <string name="date">date</string>
-    <string name="time">time</string>
+    <string name="date">data</string>
+    <string name="time">godzina</string>
     <string name="add_task">Dodaj zadanie</string>
 
 
