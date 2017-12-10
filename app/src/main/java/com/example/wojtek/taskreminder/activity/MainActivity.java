@@ -1,8 +1,13 @@
 package com.example.wojtek.taskreminder.activity;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +17,9 @@ import com.example.wojtek.taskreminder.helper.SQLiteHandler;
 import com.example.wojtek.taskreminder.helper.SessionManager;
 
 import java.util.HashMap;
+
+
+import static com.example.wojtek.taskreminder.activity.NetworkStateChangeReceiver.IS_NETWORK_AVAILABLE;
 
 public class MainActivity extends Activity {
 
@@ -28,6 +36,17 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        IntentFilter intentFilter = new IntentFilter(NetworkStateChangeReceiver.NETWORK_AVAILABLE_ACTION);
+        LocalBroadcastManager.getInstance(this).registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                boolean isNetworkAvailable = intent.getBooleanExtra(IS_NETWORK_AVAILABLE, false);
+                String networkStatus = isNetworkAvailable ? "connected" : "disconnected";
+
+                Snackbar.make(findViewById(R.id.activity_main), "Network Status: " + networkStatus, Snackbar.LENGTH_LONG).show();
+            }
+        }, intentFilter);
 
         txtName = (TextView) findViewById(R.id.name);
         txtEmail = (TextView) findViewById(R.id.email);
@@ -82,6 +101,12 @@ public class MainActivity extends Activity {
                 logoutUser();
             }
         });
+
+
+
+
+
+
     }
 
     /**
